@@ -15,8 +15,8 @@
 <body ng-app="myApp">
     <h1>Weekend Tasks</h1>
     <div ng-controller="AppController as ac">
-        <form ng-submit="ac.addTask()">
-            <input ng-model= "ac.task" type="text" placeholder="Add Task" id="Task">
+        <form ng-submit="ac.sendTask(ac.addtask)">
+            <input ng-model= "ac.addtask.task" type="text" placeholder="Add Task" id="Task">
             <input type="submit" name="Submit" id="btn">
         </form>
     </div>

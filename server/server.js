@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
-const tasks = require('./public/routes/tasks')
+const tasks = require('./routes/tasks')
 
 //makes the data available on req.body
 //bodyparser sets req.body = data;
