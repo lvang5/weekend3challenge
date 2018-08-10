@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weekend 3 Challenge</title>
+    <script src="vendors/angular.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="script/client.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <h1>Weekend Tasks</h1>
+    <div ng-controller="AppController as ac">
+        <form ng-submit="ac.addTask()">
+            <input ng-model= "ac.task" type="text" placeholder="Add Task" id="Task">
+            <input type="submit" name="Submit" id="btn">
+        </form>
+    </div>
+</body>
+
+</html>
