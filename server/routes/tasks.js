@@ -6,7 +6,7 @@ const Schema = mongoose.Schema; //Similar to a class
 //Define Schema
 const TaskSchema = new Schema ({
     task: {type: String},
-    // completed: {Type: Boolean, default: false}
+    complete: {type: Boolean, default: false}
 });
 
 
@@ -39,6 +39,16 @@ router.get('/', (req, res) => {
     }).catch( (error) => {
         res.sendStatus(500);  
     });
+})
+
+router.delete('/:id', (req, res) => {
+    console.log('in Delete');
+    Tasks.findByIdAndRemove(req.params.id).then((response) => {
+        res.sendStatus(201);
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
+    
 })
 
 

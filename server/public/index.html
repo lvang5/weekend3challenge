@@ -36,7 +36,7 @@
                 <tr ng-repeat="data in ac.allTask">
                     <td>{{data.task}}</td>
                     <td><button>Completed</button></td>
-                    <td><button>Remove</button></td>
+                    <td><button ng-click="ac.deleteTask(data._id)">Delete</button></td>
                 </tr>
             </tbody>
         </table>

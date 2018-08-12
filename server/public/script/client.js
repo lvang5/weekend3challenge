@@ -5,7 +5,6 @@ myApp.controller('AppController', function ($http) {
     console.log('NG');
     // send tasks to server
     
-    vm.allTask = [];
 
     vm.sendTask = function () {
         // Making the object to send to server
@@ -33,6 +32,15 @@ myApp.controller('AppController', function ($http) {
             vm.allTask = response.data;
         }).catch(function (error) {
             alert('Error in appendtask GET', error);
+        })
+    }
+
+    vm.deleteTask = function (taskID) {
+        $http({
+            method: 'DELETE',
+            url: '/tasks/' + taskID
+        }).then(function(response){
+            vm.appendTask();
         })
     }
 
