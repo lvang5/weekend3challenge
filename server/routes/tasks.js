@@ -5,8 +5,8 @@ const Schema = mongoose.Schema; //Similar to a class
 
 //Define Schema
 const TaskSchema = new Schema ({
-    task: {Type: String},
-    completed: {Type: Boolean, default: false}
+    task: {type: String},
+    // completed: {Type: Boolean, default: false}
 });
 
 
@@ -16,20 +16,29 @@ const Tasks = mongoose.model('Tasks', TaskSchema);
 router.post('/', (req, res) => {
     console.log('/tasks in POST');
     console.log(req.body);
-    let taskFromClient = req.body;
     //adding to the database
-    const addTask = new Tasks(taskFromClient);
+    const addTask = new Tasks(req.body);
     //puts into the database
     addTask.save().then(() => {
         console.log('Task has been added', addTask);
-        res.sendStatus(201); //All Gucci
+        res.sendStatus(201); //All good
     }).catch((error) => {
         console.log(error);
         res.sendStatus(500); //crash!
+    });
+});
+
+router.get('/', (req, res) => {
+    console.log('/GET hit');
+    // {} means find everything! We are searching the collection.
+    Tasks.find({}).then( (foundTask) => {
+        console.log('found task');
         
-    })
-    
-    
+        // foundRepairs is an Array of everything found
+        res.send(foundTask);
+    }).catch( (error) => {
+        res.sendStatus(500);  
+    });
 })
 
 

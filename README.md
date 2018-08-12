@@ -27,9 +27,13 @@ To do list:
 -[x] make sure mongoose is on
 -[x] set up file with appropriate files html, client, server, db (commit)
 -[x] link files and test, commit
--[] create an input field that takes in user input
--[] store user input in an array of a database
+-[x] create an input field that takes in user input
+-[x] store user input in an array of a database
+-[x] access database
+-[x] post data to dom
 -[] when client side is refresh data should remain the same
 -[] create a delete option for each task
 -[] create a complete button for each task
 -[] add css functioning to create feature
+
+

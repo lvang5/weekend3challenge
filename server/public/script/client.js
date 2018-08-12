@@ -1,35 +1,46 @@
-console.log('JS');
-
 let myApp = angular.module('myApp', []);
 
 myApp.controller('AppController', function ($http) {
     let vm = this;
-
     console.log('NG');
-
+    // send tasks to server
+    
     vm.allTask = [];
 
-    vm.addTask = {
-        task: vm.task
-    }
-
-    // send tasks to server
-    vm.sendTask = function (value) {
-        console.log('in sendTask', value);
+    vm.sendTask = function () {
+        // Making the object to send to server
+        let taskToSend = {
+            task: vm.taskIn
+        }
         $http({
-            method: 'POST',
+            method: 'post',
             url: '/tasks',
-            data: value
+            data: taskToSend
         }).then(function (response) {
-            console.log('success', response.data);
-            vm.addtask.task = '';
+            console.log('in Post', response.data);
+            vm.appendTask();
         }).catch(function (error) {
-            alert('Uh Oh something is wrong in the POST function', error);
-        });
+            alert('error in  post', error);
+        })
+    }
+    vm.appendTask = function () {
+        
+        $http({
+            method: 'GET',
+            url: '/tasks'
+        }).then(function (response) {
+            console.log(response.data);
+            vm.allTask = response.data;
+        }).catch(function (error) {
+            alert('Error in appendtask GET', error);
+        })
     }
 
 
 
+  
+
+ 
 })
 
 

@@ -5,20 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weekend 3 Challenge</title>
-    <script src="vendors/angular.min.js"></script>
     <link rel="stylesheet" href="styles/style.css">
-
+    <script src="vendors/angular.min.js"></script>
     <script src="script/client.js"></script>
+    <title>Weekend 3 Challenge </title>
 </head>
 
 <body ng-app="myApp">
-    <h1>Weekend Tasks</h1>
-    <div ng-controller="AppController as ac">
-        <form ng-submit="ac.sendTask(ac.addtask)">
-            <input ng-model= "ac.addtask.task" type="text" placeholder="Add Task" id="Task">
-            <input type="submit" name="Submit" id="btn">
-        </form>
+    <div ng-controller="AppController as ac" class="container">
+        <h1>Weekend Challenge Task</h1>
+        <div class="form-container">
+            <form ng-submit="ac.sendTask()">
+                <!-- Input field -->
+                <label>Task:</label>
+                <input ng-model="ac.taskIn" type="text" id="task-input" placeholder="e.g. Wash Dishes">
+                <br />
+                <!-- Creates a submit button -->
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <table class="tasks-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Completed</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="task-output">
+                <tr ng-repeat="data in ac.allTask">
+                    <td>{{data.task}}</td>
+                    <td><button>Completed</button></td>
+                    <td><button>Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 
