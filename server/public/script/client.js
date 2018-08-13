@@ -43,6 +43,8 @@ myApp.controller('AppController', function ($http) {
             url: '/tasks/' + taskID
         }).then(function(response){
             vm.appendTask();
+        }).catch(function (error) {
+            alert('Error in DELETE', error);
         })
     }
 
@@ -52,6 +54,8 @@ myApp.controller('AppController', function ($http) {
             url: '/tasks/' + taskID
         }).then(function(response){
             vm.appendTask();
+        }).catch(function (error) {
+            alert('Error in PUT', error);
         })
     }
     vm.appendTask();

@@ -18,7 +18,7 @@ app.use(express.static('server/public'));
 //connect to mongo
 const mongoose = require('mongoose');
 //where is mongo?
-const mongoURI = 'mongodb://localhost:27017/tasks';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/tasks';
 //tasks is what we are naming our database
 
 mongoose.connect(mongoURI, {useNewUrlParser: true});
