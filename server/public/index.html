@@ -15,11 +15,10 @@
   <div ng-controller="AppController as ac" class="container">
     <h1>Weekend Challenge Task</h1>
     <div class="form-container">
-      <form ng-submit="ac.sendTask()">
+      <form ng-submit="ac.sendTask()" id="form">
         <!-- Input field -->
         <label>Task:</label>
         <input ng-model="ac.taskIn" type="text" id="task-input" placeholder="e.g. Wash Dishes">
-        <br />
         <!-- Creates a submit button -->
 
         <input type="submit" value="submit">
@@ -34,10 +33,10 @@
         </tr>
       </thead>
       <tbody id="task-output">
-        <tr ng-repeat="data in ac.allTask" ng-class="data.complete ? 'complete' : 'incomplete'">
-          <td>{{data.task}}</td>
+        <tr ng-repeat="data in ac.allTask"  class="list">
+          <td >{{data.task}}</td>
           <td>
-            <label for="taskComplete">
+            <label for="taskComplete" ng-class="data.complete ? 'complete' : 'incomplete'" >
               Task Completed:</label>
             <input type="checkbox" ng-checked="data.complete"  ng-click="ac.completeTask(data._id)" id="taskComplete">
           </td>

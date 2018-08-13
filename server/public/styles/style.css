@@ -1,4 +1,11 @@
-input[type=text], input[type=number] {
+body {
+    background-color:white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  input[type=text], input[type=number] {
     width: 300px;
     padding: 12px;
     border: 1px solid #ccc;
@@ -7,17 +14,21 @@ input[type=text], input[type=number] {
 }
 
 input[type=submit] {
-    background-color: darkblue;
+    background-color: cadetblue;
     color: white;
-    margin-left: 300px;
+    display: block;
+    margin: 0 auto;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: grey;
+    float: right;
+    
+    
+}   
+input[type=checkbox] {
+    width:auto;
+    float:right;
 }
 
 label {
@@ -27,34 +38,78 @@ label {
 }
 
 .form-container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    padding: 37px 55px 27px;
+    position: relative;
+    background: white;
+    background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    -webkit-background-size: 100% 30px;
+    -moz-background-size: 100% 30px;
+    -ms-background-size: 100% 30px;
+    background-size: 100% 30px;
 }
-
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+}
 .task-table {
     border-collapse: collapse;
     width: 100%;
 }
 
+
 .task-table th, td {
     text-align: left;
-    padding: 8px;
+    padding: 20px;
+    width: 50%;
+    text-align: start;
 }
 
 .task-table tr:nth-child(even){
     background-color: #f2f2f2;
 }
-
+/* 
 .task-table th {
+    float: center;
     background-color: cadetblue;
     color: white;
-}
+} */
 
 .complete {
-    background-color: green;
+   color: green;
 }
 
 .incomplete {
-    background-color: red;
+    color:red;
+}
+
+body {
+    padding: 37px 55px 27px;
+    position: relative;
+    border: 1px solid #B5B5B5;
+    background: white;
+    background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    -webkit-background-size: 100% 30px;
+    -moz-background-size: 100% 30px;
+    -ms-background-size: 100% 30px;
+    background-size: 100% 30px;
+
+    }
+.list::before {content:""; z-index:-1; margin:0 1px; width:706px; height:10px; position:absolute; bottom:-3px; left:0; background:white; border:1px solid #B5B5B5;}
+.list::after {content:''; position:absolute; width:0px; top:0; left:39px; bottom:0; border-left:1px solid #F8D3D3;}
+
+
+.list:hover {
+        background-color: #f0f0f0;
+        -webkit-transition: all 0.2s;
+        -moz-transition:    all 0.2s;
+        -ms-transition:     all 0.2s;
+        -o-transition:      all 0.2s;
+}
+
+tbody {
+    font: 16px 'AmericanTypewriter', Cambria, Georgia; color: #282625; margin: 0 auto; width: 600px;
 }
