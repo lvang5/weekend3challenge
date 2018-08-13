@@ -22,7 +22,7 @@ I created a MEAN stack application that prompts the user to add a task onto a to
 3. Open web browser and type in localhost:5000, press enter
 
 ##Screen Shot
-
+![alt text](https://github.com/lvang5/weekend3challenge/blob/master/server/Screen%20Shot%202018-08-13%20at%203.34.22%20PM.png)
 
 
 ##Completed features
