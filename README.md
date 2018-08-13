@@ -34,6 +34,6 @@ To do list:
 -[x] when client side is refresh data should remain the same
 -[x] create a delete option for each task
 -[x] create a complete button for each task
--[] add css functioning to create feature
+-[x] add css functioning to create feature
 
 

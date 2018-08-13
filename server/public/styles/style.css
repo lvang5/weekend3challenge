@@ -1,9 +1,4 @@
-body {
-    background-color:white;
-    width: 600px;
-    margin: 0 auto;
-    padding: 0;
-  }
+
 
   input[type=text], input[type=number] {
     width: 300px;
@@ -49,10 +44,7 @@ label {
     -ms-background-size: 100% 30px;
     background-size: 100% 30px;
 }
-.container {
-    max-width: 780px;
-    margin: 0 auto;
-}
+
 .task-table {
     border-collapse: collapse;
     width: 100%;
@@ -69,12 +61,11 @@ label {
 .task-table tr:nth-child(even){
     background-color: #f2f2f2;
 }
-/* 
-.task-table th {
+
+th {
     float: center;
-    background-color: cadetblue;
-    color: white;
-} */
+   justify-content: space-around;
+}
 
 .complete {
    color: green;

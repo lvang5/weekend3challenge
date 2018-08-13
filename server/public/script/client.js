@@ -18,10 +18,11 @@ myApp.controller('AppController', function ($http) {
         }).then(function (response) {
             console.log('in Post', response.data);
             vm.appendTask();
+            vm.taskIn = '';
         }).catch(function (error) {
             alert('error in  post', error);
         })
-        vm.taskIn = '';
+        
     }
     vm.appendTask = function () {
         
@@ -53,10 +54,7 @@ myApp.controller('AppController', function ($http) {
             vm.appendTask();
         })
     }
-
-  
-
- 
+    vm.appendTask();
 })
 
 
