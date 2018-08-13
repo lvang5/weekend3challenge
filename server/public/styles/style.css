@@ -50,3 +50,11 @@ label {
     background-color: cadetblue;
     color: white;
 }
+
+.complete {
+    background-color: green;
+}
+
+.incomplete {
+    background-color: red;
+}

@@ -33,7 +33,7 @@ To do list:
 -[x] post data to dom
 -[x] when client side is refresh data should remain the same
 -[x] create a delete option for each task
--[] create a complete button for each task
+-[x] create a complete button for each task
 -[] add css functioning to create feature
 
 

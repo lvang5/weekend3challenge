@@ -21,6 +21,7 @@ myApp.controller('AppController', function ($http) {
         }).catch(function (error) {
             alert('error in  post', error);
         })
+        vm.taskIn = '';
     }
     vm.appendTask = function () {
         
@@ -44,7 +45,14 @@ myApp.controller('AppController', function ($http) {
         })
     }
 
-
+    vm.completeTask = function (taskID) {
+        $http ({
+            method: 'PUT',
+            url: '/tasks/' + taskID
+        }).then(function(response){
+            vm.appendTask();
+        })
+    }
 
   
 

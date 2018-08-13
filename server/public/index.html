@@ -2,45 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="vendors/angular.min.js"></script>
-    <script src="script/client.js"></script>
-    <title>Weekend 3 Challenge </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="vendors/angular.min.js"></script>
+  <script src="script/client.js"></script>
+  <title>Weekend 3 Challenge </title>
 </head>
 
 <body ng-app="myApp">
-    <div ng-controller="AppController as ac" class="container">
-        <h1>Weekend Challenge Task</h1>
-        <div class="form-container">
-            <form ng-submit="ac.sendTask()">
-                <!-- Input field -->
-                <label>Task:</label>
-                <input ng-model="ac.taskIn" type="text" id="task-input" placeholder="e.g. Wash Dishes">
-                <br />
-                <!-- Creates a submit button -->
-                <input type="submit" value="submit">
-            </form>
-        </div>
-        <table class="tasks-table">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                    <th>Completed</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody id="task-output">
-                <tr ng-repeat="data in ac.allTask">
-                    <td>{{data.task}}</td>
-                    <td><button>Completed</button></td>
-                    <td><button ng-click="ac.deleteTask(data._id)">Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
+  <div ng-controller="AppController as ac" class="container">
+    <h1>Weekend Challenge Task</h1>
+    <div class="form-container">
+      <form ng-submit="ac.sendTask()">
+        <!-- Input field -->
+        <label>Task:</label>
+        <input ng-model="ac.taskIn" type="text" id="task-input" placeholder="e.g. Wash Dishes">
+        <br />
+        <!-- Creates a submit button -->
+
+        <input type="submit" value="submit">
+      </form>
     </div>
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Completed</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="task-output">
+        <tr ng-repeat="data in ac.allTask" ng-class="data.complete ? 'complete' : 'incomplete'">
+          <td>{{data.task}}</td>
+          <td>
+            <label for="taskComplete">
+              Task Completed:</label>
+            <input type="checkbox" ng-checked="data.complete"  ng-click="ac.completeTask(data._id)" id="taskComplete">
+          </td>
+          <td>
+            <button ng-click="ac.deleteTask(data._id)" >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 
 </html>

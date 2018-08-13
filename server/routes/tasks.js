@@ -51,5 +51,23 @@ router.delete('/:id', (req, res) => {
     
 })
 
+router.put('/:id', (req, res) => {
+    console.log('in PUT');
+    Tasks.findOne({_id: req.params.id}).then((foundData) => {
+        console.log(foundData);
+        foundData.complete = true;
+        //send back to database
+        foundData.save().then((response) => {
+            res.sendStatus(201);
+        })
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
+    
+})
+
+
+
+
 
 module.exports = router;
