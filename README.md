@@ -1,11 +1,11 @@
-#HOSTED
+# HOSTED
 Access to a live version of this application:
 https://polar-stream-41808.herokuapp.com
 
-#MEAN Stack To-do list
+# MEAN Stack To-do list
 I created a MEAN stack application that prompts the user to add a task onto a to-do list. This list will be updated consistently as the user continues to add items to their list. Additional features within this app allows users to check off tasks that have been completed and delete tasks that may have accidently been added/completed. I also added some CSS styling to make the application look more appealing. Feel free to contact me if you have any questions/comments.
 
-##Built with these technologies:
+## Built with these technologies:
 - HTML
 - CSS
 - JAVASCRIPT
@@ -14,18 +14,18 @@ I created a MEAN stack application that prompts the user to add a task onto a to
 - ANGULAR JS
 - NODE.JS
 
-##Install on local host
+## Install on local host
 1. Download project
 2. In terminal/command prompt type:
     * npm install
     * npm start
 3. Open web browser and type in localhost:5000, press enter
 
-##Screen Shot
+## Screen Shot
 Inline-style: ![alt text](https://github.com/lvang5/weekend3challenge/blob/master/server/Screen%20Shot%202018-08-13%20at%203.34.22%20PM.png)
 
 
-##Completed features
+## Completed features
 - [x] Created an input field that takes in user input
 - [x] Created a submit button that activates function once clicked
 - [x] In client side added CRUD routes to access information in the server: 
@@ -38,7 +38,7 @@ Inline-style: ![alt text](https://github.com/lvang5/weekend3challenge/blob/maste
 - [x] Added CSS styling to HTML
 
 
-###Next Steps
+### Next Steps
 Features that I would like to add to this project are:
 * Adding more CSS features
 * Add a Category for each task
@@ -47,10 +47,10 @@ Features that I would like to add to this project are:
 * Create a reminder feature that will send via text or email 
 
 
-###Authors
+### Authors
 Lais Vang
 
-####Acknowledgments
-* CSS Styling: Zach Reed https://coderwall.com/p/fw_b4q/notebook-paper-css
+#### Acknowledgments
+* CSS Styling-Notebook: Zach Reed https://coderwall.com/p/fw_b4q/notebook-paper-css
 
 
